@@ -7,18 +7,17 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       description:
-        "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
+        "A full-stack e-commerce solution built with HTML, CSS, php, and mySQL. Features include user authentication, payment integration, and admin dashboard.",
       image:
         "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      tech: ["HTML", "CSS", "php", "mySQL"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-600" size={20} />,
       status: "In Development",
     },
     {
-      title: "Task Management App",
-      description:
-        "A React Native mobile application for task management with real-time synchronization and collaborative features.",
+      title: "A Tourism App",
+      description: "A flutter mobile application for tourists can ----> dummy.",
       image:
         "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
       tech: ["React Native", "Firebase", "Redux"],
