@@ -1,6 +1,9 @@
 import React from "react";
 import { GraduationCap, Code, Smartphone, Globe } from "lucide-react";
 
+// 1. IMPORT THE IMAGE from its correct relative path
+import profileImage from "../assets/profile.jpeg";
+
 const About = () => {
   const highlights = [
     {
@@ -43,7 +46,8 @@ const About = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  // 2. USE THE IMPORTED VARIABLE in the src attribute
+                  src={profileImage}
                   alt="Chandupa Sasmitha"
                   className="w-full h-full object-cover"
                 />
