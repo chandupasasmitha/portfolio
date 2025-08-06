@@ -1,9 +1,30 @@
 import React from "react";
 import { ExternalLink, Github, Code, Smartphone, Globe } from "lucide-react";
+import npkImage from "../assets/npk.png"; // 1. IMPORT THE LOCAL IMAGE
+import appImage from "../assets/travelwishapp.png"; // Import another image for the second project
 
 const Projects = () => {
-  // Placeholder projects - can be updated with real projects later
   const projects = [
+    {
+      title: "A Tourism App",
+      description:
+        "Developed a mobile application to assist tourists with end-to-end trip planning. The app allows users to discover destinations, book accommodations, and access local services. It features booking history tracking, real-time notifications for confirmations and advanced filters for budget, location, and availability. Tourists can also securely manage their profiles and preferences to ensure a personalized travel experience.",
+      image: appImage,
+      tech: ["flutter", "node js", "express js", "mongo DB"],
+      category: "Mobile",
+      icon: <Smartphone className="text-emerald-600" size={20} />,
+      status: "Planning",
+    },
+    {
+      title: " NPK Data Tracker App(Web App)",
+      description:
+        " Developed a web application for real-time soil NPK monitoring. The app integrates with hardware sensors for live data, stores historical trends, and uses GPS to map sample locations. It also allows for manual data entry, all through a user-friendly interface designed to improve agricultural decision-making.",
+      image: npkImage, // 2. USE THE IMPORTED IMAGE VARIABLE HERE
+      tech: ["React", "TypeScript", "Supabase"],
+      category: "Web App",
+      icon: <Code className="text-purple-600" size={20} />,
+      status: "Concept",
+    },
     {
       title: "E-Commerce Platform",
       description:
@@ -14,27 +35,6 @@ const Projects = () => {
       category: "Full-Stack",
       icon: <Globe className="text-blue-600" size={20} />,
       status: "In Development",
-    },
-    {
-      title: "A Tourism App",
-      description: "A flutter mobile application for tourists can ----> dummy.",
-      image:
-        "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React Native", "Firebase", "Redux"],
-      category: "Mobile",
-      icon: <Smartphone className="text-emerald-600" size={20} />,
-      status: "Planning",
-    },
-    {
-      title: "Code Snippet Manager",
-      description:
-        "A web application for developers to save, organize, and share code snippets with syntax highlighting and search functionality.",
-      image:
-        "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "TypeScript", "Supabase"],
-      category: "Web App",
-      icon: <Code className="text-purple-600" size={20} />,
-      status: "Concept",
     },
   ];
 
