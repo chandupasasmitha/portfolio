@@ -15,14 +15,13 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-cyan-500/10 to-emerald-500/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br bg-gray-900 "></div>
 
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+      {/* <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div> */}
 
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-8">
@@ -46,7 +45,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-cyan-500/20"
             >
               Explore My Work
             </button>
@@ -54,18 +53,21 @@ const Hero = () => {
             <div className="flex space-x-4">
               <a
                 href="mailto:chandupa@example.com"
+                aria-label="Send me an email"
                 className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
                 <Mail size={24} />
               </a>
               <a
                 href="https://github.com"
+                aria-label="View my GitHub profile"
                 className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
                 <Github size={24} />
               </a>
               <a
                 href="https://linkedin.com"
+                aria-label="View my LinkedIn profile"
                 className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
                 <Linkedin size={24} />
@@ -77,6 +79,7 @@ const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={scrollToAbout}
+            aria-label="Scroll to about section"
             className="p-2 text-white/70 hover:text-white transition-colors duration-300"
           >
             <ArrowDown size={24} />

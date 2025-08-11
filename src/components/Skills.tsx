@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import {
-  Code,
-  Server,
-  Database,
-  Smartphone,
-  Wrench,
-  Cloud,
-} from "lucide-react";
+import { Code, Server, Database, Cloud, Wrench } from "lucide-react";
 
 const Skills = () => {
-  // 1. Updated Data Structure with name and logo URL for each skill
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Frontend",
       icon: <Code className="w-5 h-5" />,
       skills: [
         {
@@ -47,14 +39,10 @@ const Skills = () => {
           name: "Redux",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
         },
-        {
-          name: "Sass",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-        },
       ],
     },
     {
-      title: "Backend Development",
+      title: "Backend",
       icon: <Server className="w-5 h-5" />,
       skills: [
         {
@@ -74,17 +62,13 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
         },
         {
-          name: "Flask",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-        },
-        {
           name: "GraphQL",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
         },
       ],
     },
     {
-      title: "Database Technologies",
+      title: "Databases",
       icon: <Database className="w-5 h-5" />,
       skills: [
         {
@@ -100,10 +84,6 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
         },
         {
-          name: "Redis",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-        },
-        {
           name: "Firebase",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
         },
@@ -114,7 +94,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Cloud & DevOps",
+      title: "DevOps",
       icon: <Cloud className="w-5 h-5" />,
       skills: [
         {
@@ -134,21 +114,13 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
         },
         {
-          name: "Heroku",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg",
-        },
-        {
           name: "Linux",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-        },
-        {
-          name: "Nginx",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
         },
       ],
     },
     {
-      title: "Development Tools",
+      title: "Tools",
       icon: <Wrench className="w-5 h-5" />,
       skills: [
         {
@@ -164,10 +136,6 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
         },
         {
-          name: "Webpack",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
-        },
-        {
           name: "Vite",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
         },
@@ -179,10 +147,6 @@ const Skills = () => {
           name: "ESLint",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg",
         },
-        {
-          name: "Prettier",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg",
-        },
       ],
     },
   ];
@@ -190,42 +154,40 @@ const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState(
     skillCategories[0].title
   );
-
   const activeCategory = skillCategories.find(
     (cat) => cat.title === selectedCategory
   );
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Skills & Technologies
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive toolkit of modern technologies and frameworks that I
-            use to bring ideas to life.
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            A comprehensive toolkit of modern technologies I use to bring ideas
+            to life.
           </p>
         </div>
 
-        {/* Category Selector Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {skillCategories.map((category) => (
             <button
               key={category.title}
               onClick={() => setSelectedCategory(category.title)}
-              className={`flex items-center gap-3 px-5 py-3 rounded-lg font-semibold text-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 ${
+              className={`flex items-center gap-3 px-5 py-3 rounded-lg font-semibold text-base transition-all duration-300 ease-in-out transform hover:-translate-y-1 ${
                 selectedCategory === category.title
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg"
-                  : "bg-white text-gray-700 shadow-sm hover:shadow-md"
+                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-cyan-500/20"
+                  : "bg-gray-800 text-gray-300 shadow-md hover:bg-gray-700"
               }`}
             >
               <span
                 className={
                   selectedCategory === category.title
                     ? "text-white"
-                    : "text-gray-600"
+                    : "text-gray-400"
                 }
               >
                 {category.icon}
@@ -235,25 +197,23 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Display Skills for the Active Category */}
         {activeCategory && (
           <div
             key={activeCategory.title}
-            className="bg-white rounded-xl p-8 lg:p-12 shadow-lg animate-fade-in"
+            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-gray-700 shadow-2xl animate-fade-in"
           >
-            {/* 2. Updated JSX to render logo and name */}
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6 justify-center">
               {activeCategory.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center justify-center gap-2 p-4 bg-gray-50 rounded-lg w-32 h-32 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                  className="flex flex-col items-center justify-center gap-3 p-4 bg-gray-900/50 rounded-lg h-32 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-gray-700/50"
                 >
                   <img
                     src={skill.logo}
                     alt={`${skill.name} logo`}
                     className="w-12 h-12 object-contain"
                   />
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-gray-300 text-center">
                     {skill.name}
                   </span>
                 </div>

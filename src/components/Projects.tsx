@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink, Github, Code, Smartphone, Globe } from "lucide-react";
-import npkImage from "../assets/npk.png"; // 1. IMPORT THE LOCAL IMAGE
-import appImage from "../assets/travelwishapp.png"; // Import another image for the second project
+import npkImage from "../assets/npk.png";
+import appImage from "../assets/travelwishapp.png";
 
 const Projects = () => {
   const projects = [
@@ -12,17 +12,17 @@ const Projects = () => {
       image: appImage,
       tech: ["flutter", "node js", "express js", "mongo DB"],
       category: "Mobile",
-      icon: <Smartphone className="text-emerald-600" size={20} />,
+      icon: <Smartphone className="text-emerald-500" size={20} />,
       status: "Planning",
     },
     {
       title: " NPK Data Tracker App(Web App)",
       description:
         " Developed a web application for real-time soil NPK monitoring. The app integrates with hardware sensors for live data, stores historical trends, and uses GPS to map sample locations. It also allows for manual data entry, all through a user-friendly interface designed to improve agricultural decision-making.",
-      image: npkImage, // 2. USE THE IMPORTED IMAGE VARIABLE HERE
+      image: npkImage,
       tech: ["React", "TypeScript", "Supabase"],
       category: "Web App",
-      icon: <Code className="text-purple-600" size={20} />,
+      icon: <Code className="text-purple-500" size={20} />,
       status: "Concept",
     },
     {
@@ -33,18 +33,29 @@ const Projects = () => {
         "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
       tech: ["HTML", "CSS", "php", "mySQL"],
       category: "Full-Stack",
-      icon: <Globe className="text-blue-600" size={20} />,
+      icon: <Globe className="text-blue-500" size={20} />,
+      status: "In Development",
+    },
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution built with HTML, CSS, php, and mySQL. Features include user authentication, payment integration, and admin dashboard.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["HTML", "CSS", "php", "mySQL"],
+      category: "Full-Stack",
+      icon: <Globe className="text-blue-500" size={20} />,
       status: "In Development",
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-4">Projects</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             A showcase of my development journey and the solutions I'm building
             to solve real-world problems
           </p>
@@ -54,7 +65,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 border border-gray-700"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -63,21 +74,21 @@ const Projects = () => {
                   className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute top-4 left-4">
-                  <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <div className="flex items-center space-x-2 bg-gray-900/70 backdrop-blur-sm px-3 py-1 rounded-full">
                     {project.icon}
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-medium text-gray-200">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <div className="absolute top-4 right-4">
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       project.status === "In Development"
-                        ? "bg-yellow-100 text-yellow-800"
+                        ? "bg-yellow-400/20 text-yellow-300"
                         : project.status === "Planning"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-gray-100 text-gray-800"
+                        ? "bg-blue-400/20 text-blue-300"
+                        : "bg-gray-400/20 text-gray-300"
                     }`}
                   >
                     {project.status}
@@ -86,10 +97,10 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-400 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -97,21 +108,21 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                      className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex space-x-3">
-                  <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-600 transition-colors duration-200">
+                <div className="flex space-x-4 mt-auto">
+                  <button className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200">
                     <Github size={16} />
-                    <span className="text-sm">Code</span>
+                    <span className="text-sm font-medium">Code</span>
                   </button>
-                  <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-600 transition-colors duration-200">
+                  <button className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200">
                     <ExternalLink size={16} />
-                    <span className="text-sm">Demo</span>
+                    <span className="text-sm font-medium">Demo</span>
                   </button>
                 </div>
               </div>
@@ -119,11 +130,11 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
+        <div className="text-center mt-16">
+          <p className="text-gray-400 mb-6">
             More exciting projects coming soon!
           </p>
-          <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/30">
             View All Projects
           </button>
         </div>
