@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Code, Server, Database, Cloud, Wrench } from "lucide-react";
+import { useInView } from "../hooks/useInView"; // Make sure this path is correct
 
 const Skills = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Frontend");
+  const [titleRef, isTitleInView] = useInView({ threshold: 0.5 });
+
   const skillCategories = [
     {
       title: "Frontend",
@@ -33,11 +37,7 @@ const Skills = () => {
         },
         {
           name: "Tailwind CSS",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-        },
-        {
-          name: "Redux",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
         },
       ],
     },
@@ -99,7 +99,7 @@ const Skills = () => {
       skills: [
         {
           name: "AWS",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
         },
         {
           name: "Docker",
@@ -129,7 +129,7 @@ const Skills = () => {
         },
         {
           name: "GitHub",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+          logo: "https://tse3.mm.bing.net/th/id/OIP.UuaLkFWx4KDmdiCuQYO5wAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
         },
         {
           name: "VS Code",
@@ -151,9 +151,6 @@ const Skills = () => {
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(
-    skillCategories[0].title
-  );
   const activeCategory = skillCategories.find(
     (cat) => cat.title === selectedCategory
   );
@@ -161,7 +158,14 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-700 ease-out ${
+            isTitleInView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl font-bold text-white mb-4">
             Skills & Technologies
           </h2>
@@ -202,11 +206,13 @@ const Skills = () => {
             key={activeCategory.title}
             className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-gray-700 shadow-2xl animate-fade-in"
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6 justify-center">
+            {/* **CHANGE HERE**: Replaced grid with flexbox for better centering */}
+            <div className="flex flex-wrap justify-center items-center gap-6">
               {activeCategory.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center justify-center gap-3 p-4 bg-gray-900/50 rounded-lg h-32 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-gray-700/50"
+                  // **CHANGE HERE**: Added a fixed width to ensure proper wrapping
+                  className="flex flex-col items-center justify-center gap-3 p-4 bg-gray-900/50 rounded-lg h-32 w-32 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:bg-cyan-500/10"
                 >
                   <img
                     src={skill.logo}
