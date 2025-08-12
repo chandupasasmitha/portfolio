@@ -40,6 +40,39 @@ const Projects = () => {
       icon: <Globe className="text-blue-500" size={20} />,
       status: "In Development",
     },
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution built with HTML, CSS, php, and MySQL. Features include user authentication, payment integration, and an intuitive admin dashboard for managing products.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["HTML", "CSS", "PHP", "MySQL"],
+      category: "Full-Stack",
+      icon: <Globe className="text-blue-500" size={20} />,
+      status: "In Development",
+    },
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution built with HTML, CSS, php, and MySQL. Features include user authentication, payment integration, and an intuitive admin dashboard for managing products.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["HTML", "CSS", "PHP", "MySQL"],
+      category: "Full-Stack",
+      icon: <Globe className="text-blue-500" size={20} />,
+      status: "In Development",
+    },
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution built with HTML, CSS, php, and MySQL. Features include user authentication, payment integration, and an intuitive admin dashboard for managing products.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["HTML", "CSS", "PHP", "MySQL"],
+      category: "Full-Stack",
+      icon: <Globe className="text-blue-500" size={20} />,
+      status: "In Development",
+    },
   ];
 
   return (
