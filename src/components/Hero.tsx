@@ -1,18 +1,7 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
-import { TypeAnimation } from "react-type-animation";
-
-// Import the Engine type from the tsparticles-engine package
-import type { Engine } from "tsparticles-engine";
 
 const Hero = () => {
-  // Add the Engine type to the engine parameter
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
-
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -20,86 +9,15 @@ const Hero = () => {
     }
   };
 
-  const particleOptions = {
-    background: {
-      color: {
-        value: "#0a0a0a",
-      },
-    },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: "repulse",
-        },
-        resize: true,
-      },
-      modes: {
-        repulse: {
-          distance: 100,
-          duration: 0.4,
-        },
-      },
-    },
-    particles: {
-      color: {
-        value: "#ffffff",
-      },
-      links: {
-        color: "#ffffff",
-        distance: 150,
-        enable: true,
-        opacity: 0.1,
-        width: 1,
-      },
-      move: {
-        direction: "none",
-        enable: true,
-        outModes: {
-          default: "bounce",
-        },
-        random: false,
-        speed: 1,
-        straight: false,
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 800,
-        },
-        value: 80,
-      },
-      opacity: {
-        value: 0.2,
-      },
-      shape: {
-        type: "circle",
-      },
-      size: {
-        value: { min: 1, max: 3 },
-      },
-    },
-    detectRetina: true,
-  };
-
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={particleOptions}
-        className="absolute inset-0 z-0"
-      />
+      {/* Background color */}
+      <div className="absolute inset-0 bg-gray-900"></div>
 
-      <div className="absolute inset-0 z-1 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-[spin_20s_linear_infinite]"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl animate-[spin_25s_linear_infinite] delay-1000"></div>
-      </div>
-
+      {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-8">
           <div className="space-y-4">
@@ -109,21 +27,9 @@ const Hero = () => {
                 Chandupa Sasmitha
               </span>
             </h1>
-            <div className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light h-10">
-              <TypeAnimation
-                sequence={[
-                  "A Full-Stack Developer",
-                  2000,
-                  "A Tech Enthusiast",
-                  2000,
-                  "A Creative Problem-Solver",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </div>
+            <p className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light">
+              Full-Stack Developer & Tech Enthusiast
+            </p>
           </div>
 
           <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
@@ -165,6 +71,7 @@ const Hero = () => {
           </div>
         </div>
 
+        {/* Scroll arrow */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={scrollToAbout}
