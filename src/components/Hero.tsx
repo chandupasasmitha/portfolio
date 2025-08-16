@@ -58,7 +58,7 @@ const Hero = () => {
                 <Mail size={24} />
               </a>
               <a
-                href="https://github.com/chandupa"
+                href="https://github.com/chandupasasmitha"
                 aria-label="View my GitHub profile"
                 className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110 hover:text-gray-300"
               >
