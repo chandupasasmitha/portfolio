@@ -4,6 +4,8 @@ import npkImage from "../assets/npk.png";
 import appImage from "../assets/travelwishapp.png";
 import bobaImage from "../assets/bobalicious.jpeg";
 import webImage from "../assets/travelwishweb.png";
+import healthImage from "../assets/mindlink.png";
+import wasteImage from "../assets/waste.jpg";
 import { useInView } from "../hooks/useInView";
 
 const Projects = () => {
@@ -14,22 +16,26 @@ const Projects = () => {
     {
       title: "A Tourism App - TravelWish",
       description:
-        "Developed a mobile application to assist tourists with end-to-end trip planning. Features include destination discovery, accommodation booking, real-time notifications, and advanced filtering for a personalized experience.",
+        "Developed a mobile application to assist tourists with end-to-end trip planning. Features include destination discovery, accommodation booking, hiring tour guides, reserving restaurants, accessing other tourism services, real-time notifications, and advanced filtering for a personalized experience.",
       image: appImage,
       tech: ["Flutter", "Node.js", "Express.js", "MongoDB"],
       category: "Mobile",
       icon: <Smartphone className="text-emerald-500" size={20} />,
       status: "Completed",
+      github: "https://github.com/chandupasasmitha/Travel-Wish",
+      demo: "https://travelwish-app-demo.com",
     },
     {
       title: "TravelWish - Part II",
       description:
-        "A full-stack e-commerce solution built with HTML, CSS, php, and MySQL. Features include user authentication, payment integration, and an intuitive admin dashboard for managing products.",
+        "Developed a service provider website for tourism businesses, including accommodation providers, tour guides, restaurants, taxi drivers, and other services. Features include registration, profile management, booking and payment tracking, and real-time notifications to efficiently connect with travelers.",
       image: webImage,
       tech: ["Next.js", "Express.js", "Node.js", "MongoDB"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
       status: "Completed",
+      github: "https://github.com/CodeCraftersUOM",
+      demo: "https://travelwish-service-provider-demo.com",
     },
     {
       title: "NPK Data Tracker Web App",
@@ -40,6 +46,8 @@ const Projects = () => {
       category: "Web App",
       icon: <Code className="text-purple-500" size={20} />,
       status: "Completed",
+      github: "https://github.com/yourusername/npk-data-tracker",
+      demo: "https://npk-data-tracker-demo.com",
     },
     {
       title: "E-Commerce Platform - Bobalicious",
@@ -50,28 +58,32 @@ const Projects = () => {
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
       status: "Completed",
+      github: "https://github.com/chandupasasmitha/BOBALICIOUS",
+      demo: "https://bobalicious-demo.com",
     },
     {
-      title: "E-Commerce Platform",
+      title: "MindLink",
       description:
-        "A full-stack e-commerce solution built with HTML, CSS, php, and MySQL. Features include user authentication, payment integration, and an intuitive admin dashboard for managing products.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["HTML", "CSS", "PHP", "MySQL"],
+        "MindLink is a confidential and anonymous digital community designed for university students to express their thoughts, track emotional health, and access help without fear of stigma. It combines peer support, self-tracking tools, and professional resources in one secure ecosystem.",
+      image: healthImage,
+      tech: ["React", "Tailwind", "Ballerina", "MongoDB"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
       status: "In Development",
+      github: "https://github.com/yourusername/mindlink",
+      demo: "https://mindlink-demo.com",
     },
     {
-      title: "E-Commerce Platform",
+      title: "Waste Management Mobile App",
       description:
-        "A full-stack e-commerce solution built with HTML, CSS, php, and MySQL. Features include user authentication, payment integration, and an intuitive admin dashboard for managing products.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["HTML", "CSS", "PHP", "MySQL"],
+        "A waste management app concept that connects users with nearby collectors, shows collection schedules, and rewards proper disposal. Points earned can be redeemed for essentials at supermarkets and grocery stores, promoting sustainable living.",
+      image: wasteImage,
+      tech: ["Flutter", "Node.js", "Express.js", "MongoDB"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
       status: "Concept",
+      github: "https://github.com/yourusername/waste-management-app",
+      demo: "https://waste-management-app-demo.com",
     },
   ];
 
@@ -149,15 +161,31 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* GitHub and Demo links */}
                 <div className="flex space-x-4 mt-auto pt-4 border-t border-gray-700/50">
-                  <button className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                    <Github size={18} />
-                    <span className="text-sm font-medium">Code</span>
-                  </button>
-                  <button className="flex items-center space-x-2 text-gray-400 hover:text-emerald-400 transition-colors duration-200">
-                    <ExternalLink size={18} />
-                    <span className="text-sm font-medium">Demo</span>
-                  </button>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                    >
+                      <Github size={18} />
+                      <span className="text-sm font-medium">Code</span>
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-gray-400 hover:text-emerald-400 transition-colors duration-200"
+                    >
+                      <ExternalLink size={18} />
+                      <span className="text-sm font-medium">Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

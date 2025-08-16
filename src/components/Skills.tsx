@@ -51,19 +51,15 @@ const Skills = () => {
         },
         {
           name: "Express.js",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+          logo: "https://logowik.com/content/uploads/images/express-js1720895493.logowik.com.webp",
+        },
+        {
+          name: "php",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
         },
         {
           name: "Python",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-        },
-        {
-          name: "Django",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-        },
-        {
-          name: "GraphQL",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
         },
       ],
     },
@@ -86,10 +82,6 @@ const Skills = () => {
         {
           name: "Firebase",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-        },
-        {
-          name: "Prisma",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
         },
       ],
     },
@@ -144,8 +136,12 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
         },
         {
-          name: "ESLint",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg",
+          name: "Postman",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+        },
+        {
+          name: "Figma",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
         },
       ],
     },
