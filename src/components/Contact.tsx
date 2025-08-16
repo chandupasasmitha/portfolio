@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -11,12 +12,16 @@ import {
 import { useInView } from "../hooks/useInView"; // Make sure this path is correct
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+
+  const [status, setStatus] = useState("Send Message");
 
   // Refs for animation
   const [titleRef, isTitleInView] = useInView({ threshold: 0.5 });
@@ -31,9 +36,32 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setStatus("Sending...");
+
+    if (!form.current) return;
+
+    // Using Vite's import.meta.env syntax to access environment variables
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+      (result) => {
+        console.log("SUCCESS!", result.text);
+        setStatus("Message Sent!");
+        setTimeout(() => {
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setStatus("Send Message");
+        }, 3000);
+      },
+      (error) => {
+        console.log("FAILED...", error.text);
+        setStatus("Failed to Send");
+        setTimeout(() => {
+          setStatus("Send Message");
+        }, 3000);
+      }
+    );
   };
 
   const contactInfo = [
@@ -83,7 +111,6 @@ const Contact = () => {
       id="contact"
       className="relative overflow-x-hidden py-20 bg-gray-900"
     >
-      {/* Animated Aurora Background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-[5vh] left-[5vw] w-[40vw] h-[40vw] bg-purple-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-[10vh] right-[10vw] w-[35vw] h-[35vw] bg-emerald-600/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
@@ -181,7 +208,7 @@ const Contact = () => {
             <h3 className="text-2xl font-semibold text-white mb-6">
               Send Me a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-blue-100 text-sm font-medium mb-2">
@@ -242,10 +269,11 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-cyan-600 to-cyan-600 text-white py-4 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-emerald-400/30"
+                className="w-full bg-gradient-to-r from-cyan-600 to-cyan-600 text-white py-4 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-emerald-400/30 disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={status === "Sending..."}
               >
                 <Send size={20} />
-                <span>Send Message</span>
+                <span>{status}</span>
               </button>
             </form>
           </div>
@@ -253,7 +281,8 @@ const Contact = () => {
 
         <div className="mt-16 text-center border-t border-white/10 pt-8">
           <p className="text-blue-200/80">
-            © 2025 Chandupa Sasmitha. Built with React and Tailwind CSS.
+            © {new Date().getFullYear()} Chandupa Sasmitha. Built with React and
+            Tailwind CSS.
           </p>
         </div>
       </div>
