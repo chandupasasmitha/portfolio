@@ -1,6 +1,6 @@
 import React from "react";
-import { TypeAnimation } from "react-type-animation"; // Import the component
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -33,14 +33,12 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* --- THIS IS THE MODIFIED PART --- */}
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 "Full-Stack Developer",
-                1500, // wait 1.5s
+                1500,
                 "Tech Enthusiast",
-                1500, // wait 1.5s
+                1500,
                 "Creative Problem Solver",
                 1500,
                 "AI/ML Enthusiast",
@@ -51,7 +49,6 @@ const Hero = () => {
               className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light"
               repeat={Infinity}
             />
-            {/* --- END OF MODIFICATION --- */}
           </div>
 
           <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
@@ -62,11 +59,23 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-cyan-400/30"
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-cyan-400/30 w-full sm:w-auto"
             >
               Explore My Work
             </button>
 
+            <a
+              href="/Chandupa-Sasmitha-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-400/20 hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+            >
+              <Download size={20} />
+              Resume
+            </a>
+          </div>
+
+          <div className="flex justify-center items-center pt-4">
             <div className="flex space-x-4">
               <a
                 href="mailto:chandupa@student.moratuwa.lk"
