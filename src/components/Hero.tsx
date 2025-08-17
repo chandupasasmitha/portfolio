@@ -59,7 +59,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-cyan-400/30 w-full sm:w-auto"
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-cyan-400/30 sm:w-auto"
             >
               Explore My Work
             </button>
@@ -68,10 +68,10 @@ const Hero = () => {
               href="/Chandupa-Sasmitha-CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-400/20 hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              className="flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-400/20 hover:scale-105 transition-all duration-300 sm:w-auto"
             >
               <Download size={20} />
-              Resume
+              View CV
             </a>
           </div>
 
