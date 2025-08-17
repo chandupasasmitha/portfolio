@@ -89,7 +89,7 @@ const Contact = () => {
     {
       icon: <Github size={20} />,
       label: "GitHub",
-      url: "https://github.com/chandupa",
+      url: "https://github.com/chandupasasmitha",
       color: "hover:text-gray-300",
     },
     {

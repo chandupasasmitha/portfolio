@@ -46,8 +46,8 @@ const Projects = () => {
       category: "Web App",
       icon: <Code className="text-purple-500" size={20} />,
       status: "Completed",
-      github: "https://github.com/yourusername/npk-data-tracker",
-      demo: "https://npk-data-tracker-demo.com",
+      github: "https://github.com/nethmalgunawardhana/NPK-Data-Tracker",
+      demo: "https://npk-data-tracker-655de.web.app",
     },
     {
       title: "E-Commerce Platform - Bobalicious",

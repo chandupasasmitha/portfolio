@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation"; // Import the component
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
@@ -31,9 +32,26 @@ const Hero = () => {
                 Chandupa Sasmitha
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light">
-              Full-Stack Developer & Tech Enthusiast
-            </p>
+
+            {/* --- THIS IS THE MODIFIED PART --- */}
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                "Full-Stack Developer",
+                1500, // wait 1.5s
+                "Tech Enthusiast",
+                1500, // wait 1.5s
+                "Creative Problem Solver",
+                1500,
+                "AI/ML Enthusiast",
+                1500,
+              ]}
+              wrapper="p"
+              speed={50}
+              className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light"
+              repeat={Infinity}
+            />
+            {/* --- END OF MODIFICATION --- */}
           </div>
 
           <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
