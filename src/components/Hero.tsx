@@ -71,7 +71,7 @@ const Hero = () => {
               className="flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-400/20 hover:scale-105 transition-all duration-300 sm:w-auto"
             >
               <Download size={20} />
-              View CV
+              Resume
             </a>
           </div>
 
