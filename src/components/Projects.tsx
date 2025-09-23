@@ -62,15 +62,15 @@ const Projects = () => {
       demo: "https://bobalicious-demo.com",
     },
     {
-      title: "MindLink",
+      title: "Budgetwise",
       description:
-        "MindLink is a confidential and anonymous digital community designed for university students to express their thoughts, track emotional health, and access help without fear of stigma. It combines peer support, self-tracking tools, and professional resources in one secure ecosystem.",
+        "Built a company budget management website with ledger creation for specific months or tasks, collaborator access control, and dynamic chart visualizations for financial insights.",
       image: healthImage,
-      tech: ["React", "Tailwind", "Ballerina", "MongoDB"],
+      tech: ["Next.js", "Tailwind CSS", "Firebase", "TypeScript"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
       status: "In Development",
-      github: "https://github.com/yourusername/mindlink",
+      github: "https://github.com/chandupasasmitha/budgetwise",
       demo: "https://mindlink-demo.com",
     },
     {
