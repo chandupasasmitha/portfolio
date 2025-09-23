@@ -4,7 +4,7 @@ import npkImage from "../assets/npk.png";
 import appImage from "../assets/travelwishapp.png";
 import bobaImage from "../assets/bobalicious.jpeg";
 import webImage from "../assets/travelwishweb.png";
-import healthImage from "../assets/mindlink.png";
+import budgetImage from "../assets/budgetwise.png";
 import wasteImage from "../assets/waste.jpg";
 import { useInView } from "../hooks/useInView";
 
@@ -65,7 +65,7 @@ const Projects = () => {
       title: "Budgetwise",
       description:
         "Built a company budget management website with ledger creation for specific months or tasks, collaborator access control, and dynamic chart visualizations for financial insights.",
-      image: healthImage,
+      image: budgetImage,
       tech: ["Next.js", "Tailwind CSS", "Firebase", "TypeScript"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
