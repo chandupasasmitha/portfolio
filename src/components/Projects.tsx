@@ -87,7 +87,7 @@ const Projects = () => {
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
       status: "in Development",
-      github: "https://github.com/yourusername/waste-management-app",
+      github: "https://github.com/UomLeos-RC-WasteManagement",
       demo: "",
     },
     {
