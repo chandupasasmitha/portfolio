@@ -1,11 +1,14 @@
 import React from "react";
 import { ExternalLink, Github, Code, Smartphone, Globe } from "lucide-react";
 import npkImage from "../assets/npk.png";
+import npkJpeg from "../assets/npk.jpg";
 import appImage from "../assets/travelwishapp.png";
+import portfolioImage from "../assets/portfolio.png";
 import bobaImage from "../assets/bobalicious.jpeg";
 import webImage from "../assets/travelwishweb.png";
 import budgetImage from "../assets/budgetwise.png";
 import wasteImage from "../assets/waste.jpg";
+import skyCast from "../assets/skycast.jpg";
 import { useInView } from "../hooks/useInView";
 
 const Projects = () => {
@@ -23,7 +26,7 @@ const Projects = () => {
       icon: <Smartphone className="text-emerald-500" size={20} />,
       status: "Completed",
       github: "https://github.com/chandupasasmitha/Travel-Wish",
-      demo: "https://travelwish-app-demo.com",
+      demo: "https://www.linkedin.com/posts/chandupa-sasmitha_travelwish-fullstackdevelopment-flutter-activity-7381954290413793280-JdYP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOIoX0B82BQRTJ7IcW9pVPTL9MzAmKWHuI",
     },
     {
       title: "TravelWish - Part II",
@@ -35,7 +38,7 @@ const Projects = () => {
       icon: <Globe className="text-blue-500" size={20} />,
       status: "Completed",
       github: "https://github.com/CodeCraftersUOM",
-      demo: "https://travelwish-service-provider-demo.com",
+      demo: "https://www.linkedin.com/posts/dulanjana-dilshan-6bb13a2ba_proud-to-announce-the-successful-completion-ugcPost-7380465453787262976-aORv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOIoX0B82BQRTJ7IcW9pVPTL9MzAmKWHuI",
     },
     {
       title: "NPK Data Tracker Web App",
@@ -49,6 +52,19 @@ const Projects = () => {
       github: "https://github.com/nethmalgunawardhana/NPK-Data-Tracker",
       demo: "https://npk-data-tracker-655de.web.app",
     },
+
+    {
+      title: "Budgetwise",
+      description:
+        "Built a company budget management website with ledger creation for specific months or tasks, collaborator access control, and dynamic chart visualizations for financial insights.",
+      image: budgetImage,
+      tech: ["Next.js", "Tailwind CSS", "Firebase", "TypeScript"],
+      category: "Full-Stack",
+      icon: <Globe className="text-blue-500" size={20} />,
+      status: "Completed",
+      github: "https://github.com/chandupasasmitha/budgetwise",
+      demo: "https://budgetwise-one.vercel.app/dashboard",
+    },
     {
       title: "E-Commerce Platform - Bobalicious",
       description:
@@ -59,49 +75,70 @@ const Projects = () => {
       icon: <Globe className="text-blue-500" size={20} />,
       status: "Completed",
       github: "https://github.com/chandupasasmitha/BOBALICIOUS",
-      demo: "https://bobalicious-demo.com",
+      demo: "https://www.linkedin.com/posts/chandupa-sasmitha_webdevelopment-ecommerce-bubbletea-activity-7298650173512003585-_gMQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOIoX0B82BQRTJ7IcW9pVPTL9MzAmKWHuI",
     },
-    {
-      title: "Budgetwise",
-      description:
-        "Built a company budget management website with ledger creation for specific months or tasks, collaborator access control, and dynamic chart visualizations for financial insights.",
-      image: budgetImage,
-      tech: ["Next.js", "Tailwind CSS", "Firebase", "TypeScript"],
-      category: "Full-Stack",
-      icon: <Globe className="text-blue-500" size={20} />,
-      status: "In Development",
-      github: "https://github.com/chandupasasmitha/budgetwise",
-      demo: "https://mindlink-demo.com",
-    },
+
     {
       title: "Waste Management Mobile App",
       description:
         "A waste management app concept that connects users with nearby collectors, shows collection schedules, and rewards proper disposal. Points earned can be redeemed for essentials at supermarkets and grocery stores, promoting sustainable living.",
       image: wasteImage,
-      tech: ["Flutter", "Node.js", "Express.js", "MongoDB"],
+      tech: ["React Native", "Node.js", "Express.js", "MongoDB"],
       category: "Full-Stack",
       icon: <Globe className="text-blue-500" size={20} />,
-      status: "Concept",
+      status: "in Development",
       github: "https://github.com/yourusername/waste-management-app",
-      demo: "https://waste-management-app-demo.com",
+      demo: "",
+    },
+    {
+      title: "Portfolio",
+      description:
+        "Personal portfolio website showcasing projects, skills, and contact information. Built with Vite, React, TypeScript and Tailwind CSS; includes a contact form integrated with EmailJS.",
+      image: portfolioImage,
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      category: "Web",
+      icon: <Globe className="text-blue-500" size={20} />,
+      status: "Completed",
+      github: "https://github.com/chandupasasmitha/portfolio",
+      demo: "chandupasasmitha.me",
+    },
+    {
+      title: "Smart Soil Monitor (NPK)",
+      description:
+        "Level‑01 IoT device that measures soil NPK and displays readings on an LCD, website and mobile app; caches data to SD when offline and gives immediate soil suitability feedback.",
+      image: npkJpeg,
+      tech: [
+        "ESP32",
+        "NPK Sensor",
+        "LCD",
+        "SD Card",
+        "Wi‑Fi",
+        "React",
+        "React Native",
+      ],
+      category: "IoT",
+      icon: <Globe className="text-amber-400" size={20} />,
+      status: "Completed",
+      github: "",
+      demo: "https://www.linkedin.com/posts/chandupa-sasmitha_smartsoiltracker-agritech-iot-activity-7362745836004388864-F8dJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOIoX0B82BQRTJ7IcW9pVPTL9MzAmKWHuI",
+    },
+    {
+      title: "Weather Forecasting App",
+      description:
+        "React Native (Expo) app that fetches current weather and hourly forecasts via OpenWeatherMap; users search by city for instant temp, humidity and condition updates.",
+      image: skyCast,
+      tech: ["React Native", "Expo", "OpenWeatherMap API", "JavaScript"],
+      category: "Mobile",
+      icon: <Smartphone className="text-emerald-500" size={20} />,
+      status: "Completed",
+      github: "https://github.com/chandupasasmitha/WeatherApp",
+      demo: "https://www.linkedin.com/in/chandupa-sasmitha/details/projects/",
     },
   ];
 
   return (
     <section id="projects" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          ref={titleRef}
-          className={`text-center mb-16 transition-all duration-700 ease-out ${
-            isTitleInView
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h2 className="text-4xl font-bold text-white mb-4">Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
-        </div>
-
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
@@ -151,17 +188,6 @@ const Projects = () => {
                 <p className="text-gray-400 mb-4 leading-relaxed text-sm flex-grow">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-cyan-500/10 text-cyan-300 rounded-full text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
                 {/* GitHub and Demo links */}
                 <div className="flex space-x-4 mt-auto pt-4 border-t border-gray-700/50">
                   {project.github && (

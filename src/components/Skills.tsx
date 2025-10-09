@@ -15,6 +15,7 @@ const Skills = () => {
           name: "React",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
         },
+
         {
           name: "Next.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
@@ -23,6 +24,16 @@ const Skills = () => {
           name: "TypeScript",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
         },
+        {
+          name: "Flutter",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+        },
+        {
+          name: "React Native",
+          // React logo used as a close visual; replace with a React Native-specific asset if desired
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+
         {
           name: "JavaScript",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -89,10 +100,6 @@ const Skills = () => {
       title: "DevOps",
       icon: <Cloud className="w-5 h-5" />,
       skills: [
-        {
-          name: "AWS",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-        },
         {
           name: "Docker",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
